@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class Prav_trikotnik 						// razred 
+{
+    float a, b, pl;
+  public:
+    Prav_trikotnik () {a = 1.0; b = 1.0; pl = a*b/2;}  		// privzeti konstruktor
+    Prav_trikotnik (float x) {a = x; b = 1.0; pl = a*b/2;}	// pretvorbeni konstruktor
+    Prav_trikotnik (float x, float y) {a = x; b = y; pl = a*b/2;} 	// konstruktor
+    ~Prav_trikotnik () {}					// destruktor
+    void izpis ();						// prototip metode za izpis
+};
+void Prav_trikotnik::izpis()					// metoda za izpis
+{
+	cout << "Pravokotni trikotnik s katetama " << a << " in " << b << 
+		" ima ploscino " << pl << "." << endl;	
+}
+
+int main () 
+{
+  Prav_trikotnik moj_trik_a, moj_trik_b(3.0), moj_trik_c(6.0,5.0);   // kreiranje objektov
+  moj_trik_a.izpis();						// klici metod 
+  moj_trik_b.izpis();
+  moj_trik_c.izpis();
+  return 0;
+}
